@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مسی ۱۰ | لئونل مسی - بزرگترین بازیکن تاریخ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --messi-blue: #74ACDF;
+            --messi-light-blue: #A7C7E7;
+            --messi-dark-blue: #1E3A8A;
+            --messi-white: #FFFFFF;
+            --messi-gold: #FFD700;
+            --messi-silver: #C0C0C0;
+            --messi-dark: #0C1A3A;
+            --messi-gradient: linear-gradient(135deg, #0C1A3A 0%, #1E3A8A 50%, #74ACDF 100%);
+            --messi-gradient-gold: linear-gradient(45deg, #FFD700, #FFA500);
+            --transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            --glass: rgba(255, 255, 255, 0.1);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background: var(--messi-gradient);
+            color: var(--messi-white);
+            overflow-x: hidden;
+            line-height: 1.7;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(116, 172, 223, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.05) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        /* Messi Number Background */
+        .messi-number-bg {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 40vw;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.02);
+            z-index: -1;
+            user-select: none;
+            white-space: nowrap;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: var(--transition);
+            backdrop-filter: blur(15px);
+            background: rgba(12, 26, 58, 0.9);
+            border-bottom: 2px solid var(--messi-blue);
+        }
+
+        header.scrolled {
+            padding: 15px 0;
+            background: rgba(12, 26, 58, 0.95);
+            box-shadow: var(--shadow);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .logo::after {
+            content: '10';
+            position: absolute;
+            top: -5px;
+            right: -10px;
+            font-size: 1.2rem;
+            color: var(--messi-gold);
+            font-weight: 900;
+            opacity: 0.8;
+        }
+
+        .logo i {
+            color: var(--messi-gold);
+            font-size: 2.5rem;
+            animation: spin 20s linear infinite;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--messi-white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            position: relative;
+            padding: 10px 0;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links a i {
+            color: var(--messi-gold);
+            font-size: 1.2rem;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 3px;
+            background: var(--messi-gradient-gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+            left: 0;
+            right: auto;
+        }
+
+        .nav-links a:hover {
+            color: var(--messi-gold);
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .buy-button {
+            background: var(--messi-gradient-gold);
+            color: var(--messi-dark);
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .buy-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--messi-white);
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 100px;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .messi-signature {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: var(--messi-gold);
+            margin-bottom: 10px;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--messi-white), var(--messi-light-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-title::after {
+            content: '10';
+            position: absolute;
+            top: -15px;
+            right: -25px;
+            font-size: 2rem;
+            color: var(--messi-gold);
+            font-weight: 900;
+            opacity: 0.7;
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            color: var(--messi-gold);
+            margin-bottom: 30px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hero-subtitle i {
+            color: var(--messi-blue);
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: var(--glass);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(116, 172, 223, 0.2);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--messi-gradient-gold);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+            border-color: var(--messi-gold);
+            box-shadow: 0 15px 30px rgba(255, 215, 0, 0.1);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--messi-gold);
+            margin-bottom: 5px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--messi-light-blue);
+            opacity: 0.9;
+        }
+
+        .hero-image {
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(1deg); }
+        }
+
+        .messi-main-image {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 20px;
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.3),
+                0 0 100px rgba(116, 172, 223, 0.1);
+            border: 2px solid var(--messi-gold);
+            position: relative;
+            z-index: 1;
+        }
+
+        .messi-main-image::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 15px;
+            pointer-events: none;
+        }
+
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .floating-trophy {
+            position: absolute;
+            top: 20%;
+            right: -30px;
+            font-size: 3rem;
+            color: var(--messi-gold);
+            animation: float 4s ease-in-out infinite 0.5s;
+            filter: drop-shadow(0 5px 15px rgba(255, 215, 0, 0.3));
+        }
+
+        .floating-ball {
+            position: absolute;
+            bottom: 30%;
+            left: -20px;
+            font-size: 2.5rem;
+            color: var(--messi-blue);
+            animation: float 5s ease-in-out infinite 1s;
+        }
+
+        /* Argentina Flag Pattern */
+        .argentina-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(45deg, 
+                    rgba(116, 172, 223, 0.1) 25%, 
+                    transparent 25%, 
+                    transparent 50%, 
+                    rgba(116, 172, 223, 0.1) 50%, 
+                    rgba(116, 172, 223, 0.1) 75%, 
+                    transparent 75%, 
+                    transparent);
+            background-size: 100px 100px;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        /* Teams Section */
+        .teams-section {
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 80px;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--messi-white);
+        }
+
+        .section-title::before {
+            content: '⚽';
+            position: absolute;
+            top: -20px;
+            right: -40px;
+            font-size: 2rem;
+            color: var(--messi-gold);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            right: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--messi-gradient-gold);
+            border-radius: 5px;
+        }
+
+        .teams-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .team-card {
+            background: var(--glass);
+            border-radius: 20px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(116, 172, 223, 0.2);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .team-card:hover {
+            transform: translateY(-15px);
+            border-color: var(--messi-gold);
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.3),
+                0 0 50px rgba(116, 172, 223, 0.1);
+        }
+
+        .team-header {
+            padding: 25px;
+            background: linear-gradient(90deg, var(--messi-dark-blue), var(--messi-blue));
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1));
+        }
+
+        .team-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--messi-white);
+            border: 2px solid var(--messi-gold);
+        }
+
+        .team-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--messi-white);
+        }
+
+        .team-period {
+            color: var(--messi-gold);
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .team-body {
+            padding: 25px;
+        }
+
+        .team-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .team-stat {
+            text-align: center;
+        }
+
+        .team-stat-value {
+            display: block;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--messi-gold);
+        }
+
+        .team-stat-label {
+            font-size: 0.9rem;
+            color: var(--messi-light-blue);
+        }
+
+        .team-trophies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .trophy-item {
+            background: rgba(116, 172, 223, 0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--messi-light-blue);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            border: 1px solid rgba(116, 172, 223, 0.3);
+        }
+
+        .trophy-item i {
+            color: var(--messi-gold);
+        }
+
+        /* Awards Gallery */
+        .awards-section {
+            padding: 120px 0;
+            background: rgba(12, 26, 58, 0.5);
+            position: relative;
+        }
+
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .award-card {
+            background: var(--glass);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .award-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.05));
+            z-index: -1;
+        }
+
+        .award-card:hover {
+            transform: scale(1.05);
+            border-color: var(--messi-gold);
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.3),
+                0 0 50px rgba(255, 215, 0, 0.1);
+        }
+
+        .award-icon {
+            font-size: 3.5rem;
+            color: var(--messi-gold);
+            margin-bottom: 20px;
+            filter: drop-shadow(0 5px 15px rgba(255, 215, 0, 0.3));
+        }
+
+        .award-count {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--messi-white);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .award-name {
+            font-size: 1.3rem;
+            color: var(--messi-light-blue);
+            font-weight: 600;
+        }
+
+        /* World Cup Special */
+        .worldcup-section {
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .worldcup-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 30% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 20%, rgba(116, 172, 223, 0.1) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        .worldcup-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .worldcup-image {
+            position: relative;
+        }
+
+        .worldcup-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.4),
+                0 0 100px rgba(255, 215, 0, 0.2);
+            border: 2px solid var(--messi-gold);
+        }
+
+        .worldcup-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--messi-gradient-gold);
+            color: var(--messi-dark);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Quote Section */
+        .quote-section {
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .quote-section::before {
+            content: '"';
+            position: absolute;
+            top: 50px;
+            right: 10%;
+            font-size: 10rem;
+            color: rgba(255, 215, 0, 0.1);
+            font-family: Georgia, serif;
+            z-index: -1;
+        }
+
+        .quote-section::after {
+            content: '"';
+            position: absolute;
+            bottom: 50px;
+            left: 10%;
+            font-size: 10rem;
+            color: rgba(116, 172, 223, 0.1);
+            font-family: Georgia, serif;
+            z-index: -1;
+        }
+
+        .quote-text {
+            font-size: 2.2rem;
+            font-weight: 300;
+            color: var(--messi-white);
+            margin-bottom: 40px;
+            line-height: 1.6;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
+
+        .quote-author {
+            font-size: 1.5rem;
+            color: var(--messi-gold);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .quote-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid var(--messi-gold);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(12, 26, 58, 0.95);
+            padding: 80px 0 30px;
+            border-top: 2px solid var(--messi-blue);
+            position: relative;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: var(--messi-gold);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--messi-gradient-gold);
+        }
+
+        .messi-number-footer {
+            font-size: 8rem;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.05);
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            user-select: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .worldcup-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .quote-text {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--messi-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--messi-gradient-gold);
+            border-radius: 6px;
+        }
+
+        /* Messi Specific Elements */
+        .messi-badge {
+            display: inline-block;
+            background: var(--messi-gradient-gold);
+            color: var(--messi-dark);
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin: 0 5px;
+        }
+
+        .messi-highlight {
+            color: var(--messi-gold);
+            font-weight: 700;
+        }
+
+        .messi-number {
+            font-family: 'Arial', sans-serif;
+            font-weight: 900;
+            color: var(--messi-gold);
+        }
+
+        /* Animation for Messi Dribbling */
+        @keyframes dribble {
+            0% { transform: translateX(0) rotate(0deg); }
+            25% { transform: translateX(20px) rotate(10deg); }
+            50% { transform: translateX(0) rotate(0deg); }
+            75% { transform: translateX(-20px) rotate(-10deg); }
+            100% { transform: translateX(0) rotate(0deg); }
+        }
+
+        .dribble-animation {
+            animation: dribble 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Messi Number Background -->
+    <div class="messi-number-bg dribble-animation">10</div>
+
+    <!-- Navigation -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-crown"></i>
+                مسی
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="#home"><i class="fas fa-home"></i> خانه</a></li>
+                <li><a href="#teams"><i class="fas fa-users"></i> تیم‌ها</a></li>
+                <li><a href="#awards"><i class="fas fa-trophy"></i> افتخارات</a></li>
+                <li><a href="#worldcup"><i class="fas fa-globe-americas"></i> جام جهانی</a></li>
+                <li><a href="#shop"><i class="fas fa-shopping-cart"></i> فروشگاه</a></li>
+            </ul>
+            
+            <div class="nav-cta">
+                <button class="buy-button" onclick="openShop('ballon')">
+                    <i class="fas fa-shopping-bag"></i>
+                    خرید توپ طلا برای رونالدو
+                </button>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="argentina-pattern"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="messi-signature">Lionel Messi</div>
+                    <h1 class="hero-title">لئونل مسی</h1>
+                    <p class="hero-subtitle">
+                        <i class="fas fa-star"></i>
+                        بزرگترین بازیکن تاریخ فوتبال
+                    </p>
+                    <p>لئونل آندره مسی، متولد ۲۴ ژوئن ۱۹۸۷ در روساریو آرژانتین. بازیکنی که تعریف فوتبال را تغییر داد و قلب میلیون‌ها نفر در سراسر جهان را به دست آورد.</p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">8</span>
+                            <span class="stat-label">توپ طلا</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">44</span>
+                            <span class="stat-label">قهرمانی</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">819</span>
+                            <span class="stat-label">گل زده</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">1</span>
+                            <span class="stat-label">جام جهانی</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                         alt="Lionel Messi" class="messi-main-image">
+                    
+                    <div class="floating-elements">
+                        <div class="floating-trophy">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="floating-ball">
+                            <i class="fas fa-futbol"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teams Section -->
+    <section class="teams-section" id="teams">
+        <div class="container">
+            <h2 class="section-title">مسیر طلایی در تیم‌ها</h2>
+            
+            <div class="teams-grid">
+                <!-- Barcelona -->
+                <div class="team-card">
+                    <div class="team-header">
+                        <div class="team-icon" style="background: #A50044;">
+                            <i class="fas fa-club"></i>
+                        </div>
+                        <div>
+                            <div class="team-name">بارسلونا</div>
+                            <div class="team-period">۲۰۰۴-۲۰۲۱</div>
+                        </div>
+                    </div>
+                    <div class="team-body">
+                        <div class="team-stats">
+                            <div class="team-stat">
+                                <span class="team-stat-value">672</span>
+                                <span class="team-stat-label">گل</span>
+                            </div>
+                            <div class="team-stat">
+                                <span class="team-stat-value">17</span>
+                                <span class="team-stat-label">سال</span>
+                            </div>
+                            <div class="team-stat">
+                                <span class="team-stat-value">35</span>
+                                <span class="team-stat-label">جام</span>
+                            </div>
+                        </div>
+                        
+                        <div class="team-trophies">
+                            <div class="trophy-item">
+                                <i class="fas fa-trophy"></i>
+                                ۴ لیگ قهرمانان
+                            </div>
+                            <div class="trophy-item">
+                                <i class="fas fa-trophy"></i>
+                                ۱۰ لالیگا
+                            </div>
+                            <div class="trophy-item">
+                                <i class="fas fa-trophy"></i>
+                                ۷ کوپا دل ری
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PSG -->
+                <div class="team-card">
+                    <div class="team-header" style="background: linear-gradient(90deg, #004170, #DA291C);">
+                        <div class="team-icon" style="background: #004170;">
+                            <i class="fas fa-club"></i>
+                        </div>
+                        <div>
+                            <div class="team-name">پاری سن ژرمن</div>
+                            <div class="team-period">۲۰۲۱-۲۰۲۳</div>
+                        </div>
+                    </div>
+                    <div class="team-body">
+                        <div class="team-stats">
+                            <div class="team-stat">
+                                <span class="team-stat-value">32</span>
+                                <span class="team-stat-label">گل</span>
+                            </div>
+                            <div class="team-stat">
+                                <span class="team-stat-value">2</span>
+                                <span class="team-stat-label">سال</span>
+                            </div>
+                            <div class="team-stat">
+                                <span class="team-stat-value">3</span>
+                                <span class="team-stat-label">جام</span>
+                            </div>
+                        </div>
+                        
+                        <div class="team-trophies">
+                            <div class="trophy-item">
+                                <i class="fas fa-trophy"></i>
+                                ۲ لیگ ۱ فرانسه
+                            </div>
+                            <div class="trophy-item">
+                                <i class="fas fa-trophy"></i>
+                                ۱ سوپرجام
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Argentina -->
+                <div class="team-card">
+                    <div class="team-header" style="background: linear-gradient(90deg, #74ACDF, #FFFFFF);">
+                        <div class="team-icon" style="background: #74ACDF;">
+                            <i class="fas fa-flag"></i>
+                        </div>
+                        <div>
+                            <div class="team-name">آرژانتین</div>
+                            <div class="team-period">۲۰۰۵-اکنون</div>
+                        </div>
+                    </div>
+                    <div class="team-body">
+                        <div class="team-stats">
+                            <div class="team-stat">
+                                <span class="team-stat-value">106</span>
+                                <span class="team-stat-label">گل</span>
+                            </div>
+                            <div class="team-stat">
+                                <span class="team-stat-value">180</span>
+                                <span class="team-stat-label">بازی</span>
+                            </div>
+                            <div class="team-stat">
+                                <span class="team-stat-value">4</span>
+                                <span class="team-stat-label">جام</span>
+                            </div>
+                        </div>
+                        
+                        <div class="team-trophies">
+                            <div class="trophy-item">
+                                <i class="fas fa-trophy"></i>
+                                ۱ جام جهانی
+                            </div>
+                            <div class="trophy-item">
+                                <i class="fas fa-trophy"></i>
+                                ۱ کوپا آمریکا
+                            </div>
+                            <div class="trophy-item">
+                                <i class="fas fa-trophy"></i>
+                                ۱ فینالیسیما
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Inter Miami -->
+                <div class="team-card">
+                    <div class="team-header" style="background: linear-gradient(90deg, #000000, #FF6B35);">
+                        <div class="team-icon" style="background: #FF6B35;">
+                            <i class="fas fa-club"></i>
+                        </div>
+                        <div>
+                            <div class="team-name">اینتر میامی</div>
+                            <div class="team-period">۲۰۲۳-اکنون</div>
+                        </div>
+                    </div>
+                    <div class="team-body">
+                        <div class="team-stats">
+                            <div class="team-stat">
+                                <span class="team-stat-value">11</span>
+                                <span class="team-stat-label">گل</span>
+                            </div>
+                            <div class="team-stat">
+                                <span class="team-stat-value">1</span>
+                                <span class="team-stat-label">جام</span>
+                            </div>
+                            <div class="team-stat">
+                                <span class="team-stat-value">1</span>
+                                <span class="team-stat-label">فصل</span>
+                            </div>
+                        </div>
+                        
+                        <div class="team-trophies">
+                            <div class="trophy-item">
+                                <i class="fas fa-trophy"></i>
+                                ۱ لیگ کاپ
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section class="awards-section" id="awards">
+        <div class="container">
+            <h2 class="section-title">جایگاه بی‌همتا در تاریخ</h2>
+            
+            <div class="awards-grid">
+                <div class="award-card">
+                    <div class="award-icon">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <div class="award-count">8</div>
+                    <div class="award-name">توپ طلا</div>
+                    <div class="award-desc">رکورددار مطلق تاریخ</div>
+                </div>
+                
+                <div class="award-card">
+                    <div class="award-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <div class="award-count">1</div>
+                    <div class="award-name">جام جهانی</div>
+                    <div class="award-desc">کاپیتان قهرمان</div>
+                </div>
+                
+                <div class="award-card">
+                    <div class="award-icon">
+                        <i class="fas fa-shoe-prints"></i>
+                    </div>
+                    <div class="award-count">6</div>
+                    <div class="award-name">کفش طلای اروپا</div>
+                    <div class="award-desc">بهترین گلزن اروپا</div>
+                </div>
+                
+                <div class="award-card">
+                    <div class="award-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="award-count">44</div>
+                    <div class="award-name">قهرمانی باشگاهی</div>
+                    <div class="award-desc">رکورد بی‌نظیر</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- World Cup Section -->
+    <section class="worldcup-section" id="worldcup">
+        <div class="container">
+            <h2 class="section-title">رویای محقق شده: قطر ۲۰۲۲</h2>
+            
+            <div class="worldcup-content">
+                <div class="worldcup-image">
+                    <img src="https://images.unsplash.com/photo-1670893321841-6e2dd8737e6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                         alt="Messi World Cup">
+                    <div class="worldcup-badge">
+                        قهرمان جام جهانی
+                    </div>
+                </div>
+                
+                <div class="worldcup-text">
+                    <h3 style="font-size: 2.5rem; color: var(--messi-gold); margin-bottom: 20px;">
+                        تکمیل کلکسیون افتخارات
+                    </h3>
+                    <p style="margin-bottom: 20px;">
+                        در ۱۸ دسامبر ۲۰۲۲، مسی بزرگترین رویای خود و میلیون‌ها هوادار آرژانتینی را به واقعیت تبدیل کرد. با کاپیتانی بی‌نظیر، تیم ملی آرژانتین را پس از ۳۶ سال به قهرمانی جام جهانی رساند.
+                    </p>
+                    
+                    <div style="background: var(--glass); padding: 20px; border-radius: 15px; margin: 30px 0;">
+                        <h4 style="color: var(--messi-gold); margin-bottom: 15px;">آمار جام جهانی ۲۰۲۲:</h4>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+                            <div>
+                                <span class="messi-highlight">۷ بازی</span>
+                                <div style="font-size: 0.9rem; color: var(--messi-light-blue);">شرکت در تمام بازی‌ها</div>
+                            </div>
+                            <div>
+                                <span class="messi-highlight">۷ گل</span>
+                                <div style="font-size: 0.9rem; color: var(--messi-light-blue);">بهترین گلزن آرژانتین</div>
+                            </div>
+                            <div>
+                                <span class="messi-highlight">۳ پاس گل</span>
+                                <div style="font-size: 0.9rem; color: var(--messi-light-blue);">خلاقیت در پاس‌دهی</div>
+                            </div>
+                            <div>
+                                <span class="messi-highlight">۲ گل در فینال</span>
+                                <div style="font-size: 0.9rem; color: var(--messi-light-blue);">قهرمان ساز</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="buy-button" onclick="openShop('worldcup')" style="width: 100%; justify-content: center;">
+                        <i class="fas fa-shopping-cart"></i>
+                        خرید جام جهانی مسی
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <div class="container">
+            <div class="quote-text">
+                "من همیشه می‌خواستم بهترین باشم، نه برای اینکه از کسی بهتر باشم، 
+                بلکه برای اینکه بتوانم بیشترین تلاشم را بکنم. من فوتبال را دوست دارم 
+                و می‌خواهم تا زمانی که می‌توانم بازی کنم."
+            </div>
+            <div class="quote-author">
+                <img src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                     alt="Messi">
+                <span>لئونل مسی</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>مسی ۱۰</h3>
+                    <p>وبسایت رسمی افتخارات و آثار لئونل مسی. این سایت به افتخار بزرگترین بازیکن تاریخ فوتبال طراحی شده است.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="#" style="color: var(--messi-gold); font-size: 1.5rem;">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" style="color: var(--messi-gold); font-size: 1.5rem;">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" style="color: var(--messi-gold); font-size: 1.5rem;">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>رکوردهای مسی</h3>
+                    <ul style="list-style: none;">
+                        <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                            <span class="messi-number">۸</span> توپ طلا
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                            <span class="messi-number">۴۴</span> قهرمانی
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                            <span class="messi-number">۸۱۹</span> گل
+                        </li>
+                        <li style="padding: 8px 0;">
+                            <span class="messi-number">۱</span> جام جهانی
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>تیم‌های مسی</h3>
+                    <ul style="list-style: none;">
+                        <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                            <span style="color: #A50044;">●</span> بارسلونا (۲۰۰۴-۲۰۲۱)
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                            <span style="color: #004170;">●</span> پاری سن ژرمن (۲۰۲۱-۲۰۲۳)
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                            <span style="color: #74ACDF;">●</span> آرژانتین (۲۰۰۵-اکنون)
+                        </li>
+                        <li style="padding: 8px 0;">
+                            <span style="color: #FF6B35;">●</span> اینتر میامی (۲۰۲۳-اکنون)
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>تماس با ما</h3>
+                    <p style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-envelope" style="color: var(--messi-gold);"></i>
+                        info@messi10.com
+                    </p>
+                    <p style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-map-marker-alt" style="color: var(--messi-gold);"></i>
+                        آرژانتین، بوئنوس آیرس
+                    </p>
+                    <button class="buy-button" onclick="openShop('ballon')" style="width: 100%; margin-top: 20px;">
+                        <i class="fas fa-gift"></i>
+                        خرید سوپرایز مسی
+                    </button>
+                </div>
+            </div>
+            
+            <div style="text-align: center; padding-top: 30px; border-top: 1px solid rgba(116, 172, 223, 0.2); color: var(--messi-light-blue);">
+                <p>© ۲۰۲۳ - طراحی شده با ❤️ به افتخار لئونل مسی. این سایت رسمی نیست و به صورت نمونه طراحی شده است.</p>
+            </div>
+            
+            <div class="messi-number-footer">10</div>
+        </div>
+    </footer>
+
+    <!-- Shop Modal -->
+    <div id="shopModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(12, 26, 58, 0.95); z-index: 2000; justify-content: center; align-items: center; padding: 20px;">
+        <div style="background: var(--messi-dark); padding: 40px; border-radius: 20px; max-width: 500px; width: 100%; border: 2px solid var(--messi-gold); position: relative;">
+            <button onclick="closeShop()" style="position: absolute; left: 20px; top: 20px; background: none; border: none; color: var(--messi-gold); font-size: 2rem; cursor: pointer; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">&times;</button>
+            
+            <h2 style="color: var(--messi-gold); margin-bottom: 30px; text-align: center; font-size: 2rem;" id="modalTitle"></h2>
+            
+            <div style="margin-bottom: 30px; text-align: center;">
+                <div id="modalPrice" style="font-size: 2.5rem; font-weight: 800; color: var(--messi-gold); margin-bottom: 10px;"></div>
+                <div id="modalDesc" style="color: var(--messi-light-blue);"></div>
+            </div>
+            
+            <form id="checkoutForm" style="display: flex; flex-direction: column; gap: 15px;">
+                <input type="text" placeholder="نام کامل" required style="width: 100%; padding: 15px; border-radius: 10px; border: 1px solid rgba(116, 172, 223, 0.3); background: rgba(255, 255, 255, 0.1); color: white; font-family: 'Vazirmatn', sans-serif;">
+                <input type="email" placeholder="ایمیل" required style="width: 100%; padding: 15px; border-radius: 10px; border: 1px solid rgba(116, 172, 223, 0.3); background: rgba(255, 255, 255, 0.1); color: white; font-family: 'Vazirmatn', sans-serif;">
+                <input type="tel" placeholder="شماره تماس" required style="width: 100%; padding: 15px; border-radius: 10px; border: 1px solid rgba(116, 172, 223, 0.3); background: rgba(255, 255, 255, 0.1); color: white; font-family: 'Vazirmatn', sans-serif;">
+                <button type="submit" style="background: var(--messi-gradient-gold); color: var(--messi-dark); padding: 15px; border-radius: 10px; border: none; font-weight: 700; font-size: 1.1rem; cursor: pointer; transition: var(--transition); font-family: 'Vazirmatn', sans-serif;">
+                    <i class="fas fa-check" style="margin-left: 10px;"></i>
+                    تأیید و پرداخت
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Nav Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '100%';
+                navLinks.style.right = '0';
+                navLinks.style.background = 'rgba(12, 26, 58, 0.95)';
+                navLinks.style.backdropFilter = 'blur(10px)';
+                navLinks.style.width = '100%';
+                navLinks.style.padding = '20px';
+                navLinks.style.gap = '20px';
+                navLinks.style.borderTop = '2px solid var(--messi-blue)';
+                navLinks.style.borderBottom = '2px solid var(--messi-blue)';
+            }
+        });
+
+        // Shop Modal
+        function openShop(product) {
+            const modal = document.getElementById('shopModal');
+            const title = document.getElementById('modalTitle');
+            const price = document.getElementById('modalPrice');
+            const desc = document.getElementById('modalDesc');
+            
+            if (product === 'ballon') {
+                title.textContent = 'خرید توپ طلای مسی';
+                price.textContent = '۲۵۰,۰۰۰,۰۰۰ تومان';
+                desc.textContent = 'رپرلیکای دقیق توپ طلای ۲۰۲۱ با کیفیت عالی';
+            } else if (product === 'worldcup') {
+                title.textContent = 'خرید جام جهانی مسی';
+                price.textContent = '۵۰۰,۰۰۰,۰۰۰ تومان';
+                desc.textContent = 'ماکت جام جهانی قطر ۲۰۲۲ با روکش طلا و نقره';
+            }
+            
+            modal.style.display = 'flex';
+        }
+
+        function closeShop() {
+            document.getElementById('shopModal').style.display = 'none';
+        }
+
+        // Checkout Form
+        document.getElementById('checkoutForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('سفارش شما با موفقیت ثبت شد! به زودی با شما تماس خواهیم گرفت.\n\nبه افتخار مسی، ۱۰٪ تخفیف ویژه دریافت کردید!');
+            closeShop();
+        });
+
+        // Messi Number Animation
+        const messiNumber = document.querySelector('.messi-number-bg');
+        let rotation = 0;
+        
+        setInterval(() => {
+            rotation += 0.1;
+            messiNumber.style.transform = `translate(-50%, -50%) rotate(${rotation}deg)`;
+        }, 50);
+
+        // Floating Elements Animation
+        const floatingElements = document.querySelectorAll('.floating-trophy, .floating-ball');
+        floatingElements.forEach((el, index) => {
+            el.style.animationDelay = `${index * 0.5}s`;
+        });
+
+        // Stats Counter Animation
+        const statNumbers = document.querySelectorAll('.stat-number');
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumber = entry.target;
+                    const targetValue = parseInt(statNumber.textContent);
+                    let currentValue = 0;
+                    const increment = targetValue / 50;
+                    
+                    const timer = setInterval(() => {
+                        currentValue += increment;
+                        if (currentValue >= targetValue) {
+                            statNumber.textContent = targetValue.toLocaleString();
+                            clearInterval(timer);
+                        } else {
+                            statNumber.textContent = Math.floor(currentValue).toLocaleString();
+                        }
+                    }, 30);
+                    
+                    observer.unobserve(statNumber);
+                }
+            });
+        }, observerOptions);
+
+        statNumbers.forEach(statNumber => {
+            observer.observe(statNumber);
+        });
+    </script>
+</body>
+</html>
